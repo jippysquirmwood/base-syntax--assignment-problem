@@ -9,19 +9,19 @@ class App extends Component {
     username: 'jippy'
   }
 
-  nameChangedHandler = event => {
-    this.setState({
-      username: event.target.value
-    })
+  usernameChangedHandler = (event) => {
+    this.setState({username: event.target.value});
   }
 
   render() {
     return (
       <div className="App">
-        <UserInput changed={this.nameChangedHandler} username={this.state.username} />
-        <UserOutput username={this.state.username} changed={this.nameChangedHandler} />
-        <UserOutput username={this.state.username} changed={this.nameChangedHandler} />
-        <UserOutput username={this.state.username} changed={this.nameChangedHandler} />
+        <UserInput
+          changed={this.usernameChangedHandler}
+          currentName={this.state.username} />
+        <UserOutput userName={this.state.username} changed={this.usernameChangedHandler} />
+        <UserOutput userName={this.state.username} changed={this.usernameChangedHandler} />
+        <UserOutput userName={this.state.username} changed={this.usernameChangedHandler} />
       </div>
     );
   }
